@@ -1,38 +1,56 @@
-.App {
-  text-align: center;
+.pokedex-grid{
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-gap: 18px;
+  padding: 0px 10px; 
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.pokemon-card{
+  display: flex;
+  box-shadow: 4px 4px 4px rgba(0, 0, 0, 0.25);
+  border-radius: 4px;;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.pokemon-img-container{
+  padding: 0px 5px;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.pokemon-img{
+  width: 70px;
+  height: 70px;
+}
+
+.card-body{
   display: flex;
   flex-direction: column;
+  justify-content: space-between;
+  padding: 10px;
+  flex: 1;
+}
+
+.card-top{
+  display: flex;
+  flex-direction:  row;
+  justify-content: space-between;
   align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
 }
 
-.App-link {
-  color: #61dafb;
+.card-top h3{
+text-transform: capitalize;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.pokemon-type{
+  text-transform: capitalize;
+  margin-right: 10px;
+}
+
+.card-bottom{
+  display: flex;
+  flex-direction:  row;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.polemon-type{
+  display: flex;
 }

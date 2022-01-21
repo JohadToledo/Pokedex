@@ -8,7 +8,7 @@ function Pokedex(props) {
           <h1>Pokedex</h1>
           <div>Pagination</div>
       </div>
-      <div>
+      <div className="pokedex-grid">
           {pokemons.map((pokemon, idx) => {
               return(
                   <Pokemon pokemon={pokemon} key={pokemon.name}/>
