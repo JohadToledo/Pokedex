@@ -12,6 +12,7 @@ function App() {
   const fetchPokemons = async() =>{
     try{
       const data = await getPokemons()
+      console.log(data)
       setPokemons(data.results)
     }catch(err){
       console.error(err)

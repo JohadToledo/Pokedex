@@ -10,7 +10,7 @@ function Pokedex(props) {
       <div>
           {pokemons.map((pokemon, idx) => {
               return(
-              <div key={pokemon.name}>{pokemon.name}</div>
+              <div key={pokemon.name}>#{idx + 1}: {pokemon.name}</div>
               )
           })}
       </div>
