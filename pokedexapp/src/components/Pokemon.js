@@ -14,8 +14,8 @@ const Pokemon = (props) => {
         </div>
         <div>
           <div>
-            {pokemon.type.map((type, idx) => {
-              return <div key={idx}>{type.type.name}</div>;
+            {pokemon.types.map((types, idx) => {
+              return <div key={idx}>{types.type.name}</div>;
             })}
           </div>
           <div>🖤</div>
