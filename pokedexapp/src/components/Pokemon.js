@@ -19,7 +19,7 @@ const Pokemon = (props) => {
                 return <div key={idx}>{types.type.name}</div>;
                 })}
             </div>
-            <div>🖤</div>
+            <div className='pokemon-favorite'>🖤</div>
             </div>
         </div>
       </div>

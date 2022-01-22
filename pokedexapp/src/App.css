@@ -54,3 +54,14 @@ text-transform: capitalize;
 .polemon-type{
   display: flex;
 }
+.header{
+display: flex;
+justify-content: space-between;
+
+}
+
+.pagination{
+display: flex;
+flex-direction: row;
+align-items: center;
+}
