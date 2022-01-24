@@ -20,7 +20,7 @@ function App() {
   const fetchPokemons = async () => {
     try {
       setLoading(true);
-      const data = await getPokemons(25, page * 25);
+      const data = await getPokemons(25, 25 * page);
       const promises = data.results.map(async (pokemon) => {
         return await getPokemonData(pokemon.url);
       });
@@ -28,7 +28,7 @@ function App() {
       setPokemons(results);
       setLoading(false);
       setTotal(Math.ceil(data.count / 25));
-      setNotFound(false)
+      setNotFound(false);
     } catch (err) {
       console.error(err);
     }
@@ -54,7 +54,9 @@ function App() {
     const isFavorite = updated.indexOf(name);
     if(isFavorite >= 0){
       updated.splice(isFavorite, 1);
-    }else updated.push(name);
+    }else {
+      updated.push(name);
+    }
     setFavorites(updated);
     window.localStorage.setItem(localStorageKey, JSON.stringify(updated))
   };
@@ -75,7 +77,6 @@ function App() {
     setPokemons([result]);
     setPage(0)
     setTotal(1)
-    
     }
     setLoading(false)
     setSearching(false)
@@ -85,15 +86,15 @@ function App() {
       <FavoriteProvider
         value={{
           favoritePokemons: favorites,
-          updateFavoritePokemons: updateFavoritePokemons,
+          updateFavoritePokemons: updateFavoritePokemons
         }}
       >
         <Navbar />
         <div className="App">
-          <Searchbar onSearch={onSearch}/>
-          {notFound ? 
+          <Searchbar onSearch={onSearch} />
+          {notFound ? (
           <div className='notfound-text'>We could not found the pokemon that you are looking for...</div>
-          :
+          ):(
           <Pokedex
             loading={loading}
             pokemons={pokemons}
@@ -101,7 +102,7 @@ function App() {
             setPage={setPage}
             total={total}
           />
-          }
+          )}
         </div>
       </FavoriteProvider>
     </>

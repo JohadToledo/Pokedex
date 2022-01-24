@@ -3,7 +3,6 @@ import FavoriteContext from "../Context/favoriteContext";
 
 function Navbar() {
   const { favoritePokemons } = useContext(FavoriteContext);
-  console.log(favoritePokemons);
   return (
     <>
       <h1>Pokedex</h1>
